@@ -18,6 +18,6 @@ tags:
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-    {% capture about_zh %}{% include posts/2018-07-13-create-react-app-less/zh.md %}{% endcapture %}
+    {% capture about_zh %}{% include posts/2018-08-31-create-react-app-less/zh.md %}{% endcapture %}
     {{ about_zh | markdownify }}
 </div>

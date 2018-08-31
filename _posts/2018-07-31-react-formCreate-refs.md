@@ -17,6 +17,6 @@ tags:
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-    {% capture about_zh %}{% include posts/2018-07-13-antd-form-create-refs/zh.md %}{% endcapture %}
+    {% capture about_zh %}{% include posts/2018-07-31-antd-form-create-refs/zh.md %}{% endcapture %}
     {{ about_zh | markdownify }}
 </div>
