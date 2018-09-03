@@ -5,7 +5,7 @@ subtitle:     "js-data-transform"
 date:         2018-09-03 9:00:00
 author:       "xiaoayng"
 header-img:   "img/2018-09-03.jpg"
-header-mask:  0.3
+header-mask:  0.4
 catalog:      true
 multilingual: true
 tags:
