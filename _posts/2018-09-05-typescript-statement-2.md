@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "typescript 声明ant-design-vue第三方组件（1）"
+title:        "typescript 声明ant-design-vue第三方组件（2）"
 subtitle:     "typescript .d.ts声明文件"
 date:         2018-09-04 19:30:00
 author:       "xiaoayng"
@@ -17,6 +17,6 @@ tags:
 
 <!-- Chinese Version -->
 <div class="zh post-container">
-    {% capture about_zh %}{% include posts/2018-09-04/zh.md %}{% endcapture %}
+    {% capture about_zh %}{% include posts/2018-09-05/zh.md %}{% endcapture %}
     {{ about_zh | markdownify }}
 </div>
