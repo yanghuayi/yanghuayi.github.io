@@ -3,14 +3,14 @@
 > 最近在做小程序蓝牙控制的时候，连接蓝牙鉴权需要进行16进制取反，再次记录一下
 
 #### 1. 先进行数据拆分
-```
+```javascript (type)
   const hex = 0x1d23f231c84ea31
   let buffer = new Uint8Array(hex.match(/[\da-f]{2}/gi));
 ```
   上面`hex`是16进制数据的变量，先进行正则匹配成uint8的数组格式
 
 #### 2. 进行循环取反
-```
+```javascript (type)
   let revList = '';
   buffer.map((item, index) => {
     buffer[index] = ~item;

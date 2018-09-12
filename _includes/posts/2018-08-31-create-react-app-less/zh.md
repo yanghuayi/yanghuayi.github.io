@@ -15,7 +15,7 @@
 改动1：
 
 `/\.css$/` 改为 `/\.(css|less)$/`, 修改后如下：
-```
+```javascript (type)
 exclude: [
   /\.html$/,
   /\.(js|jsx)$/,
@@ -33,7 +33,7 @@ exclude: [
 `test: /\.css$/` 的 use 数组配置增加 `less-loader`
 
 修改后如下：
-```
+```javascript (type)
 {
   test: /\.(css|less)$/,
   use: [

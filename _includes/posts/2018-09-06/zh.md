@@ -7,7 +7,7 @@
 出现这个问题，从深层次来说说,`vue`和`react`都会出现此问题
 
 请看代码示例:
-```
+```javascript (type)
   import Vue form 'vue'
 
   class Home extends Vue {
@@ -71,7 +71,7 @@
 所以在上面的代码中`roleIdList`数组的变化是监听不到的，除非是对`roleIdList`数据进行重新赋值，就是`this.modelForm.roleIdList = []`，这种`vue`对数据的`set`事件才能执行，在这里`select`的变化，不是进行的赋值操作，而是进行的`this.modelForm.roleIdList.push('2')`或者`this.modelForm.roleIdList.splice()`操作，是用的数组方法。
 
 在`vue`的数据双向绑定中是使用的`ES5`中的`Object.defineProperty`方法，
-```
+```javascript (type)
   var Book = {}
   var name = '';
   Object.defineProperty(Book, 'name', {
@@ -90,7 +90,7 @@
 
 这个只有进行赋值操作才会触发`set`函数，所以点击`select`没有触发`set`，自然`vue`不会去更新视图了，解决办法就是用一个第一层的变量，跟上面的`roleIdList`一同发生变化，并影响页面上的元素去触发`vue`去更新视图，
 
-```
+```javascript (type)
   import Vue form 'vue'
 
   class Home extends Vue {

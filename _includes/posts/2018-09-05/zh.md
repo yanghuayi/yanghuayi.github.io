@@ -3,7 +3,7 @@
 > 继续昨天的`ant-design-vue`的typescript声明
 
  `shims-ant-desgin-vue.d.ts`文件 
-```
+```javascript (type)
   declare module 'ant-design-vue' {
     import * as AntdVue from '@/ant-desgin-vue/index';
 
@@ -14,7 +14,7 @@
 我单独新建一个`ant-design-vue`文件存放声明文件
 
 1.先新建了一个`index.d.ts`
-```
+```javascript (type)
   import Vue, { Component } from 'vue';
 
   import { AMessage } from './message';
@@ -239,7 +239,7 @@
 这是我花了2天时间，已经声明完全的`and-design-vue`的声明文档，准备在项目中测试完成后再提交PR给官方
 
 这里只拿其中一个组件做一个示例--`table.d.ts`
-```
+```javascript (type)
   import { VNode } from 'vue';
   import { AntdVueComponent, AntdVueComponentSize } from './component';
 

@@ -1,11 +1,9 @@
 ### js-10进制-2进制-16进制数据间的相互转化
 
 > 最近蓝牙前端开发，涉及了大量的数据格式转化，在此记录下。
-```
+```javascript (type)
 export default class BleUtil {
-  /**
-   * 十进制转16进制
-   */
+  // 十进制转16进制
   static intToHex(int) {
     let hex = int.toString(16);
     if (int < 16) {
@@ -14,9 +12,7 @@ export default class BleUtil {
       return hex;
     }
   }
-  /**
-   * 十六进制转int
-   */
+  // 十六进制转int
   static hexToInt(string) {
     return parseInt(string, 16);
   }
@@ -29,15 +25,11 @@ export default class BleUtil {
     }
     return array;
   }
-  /**
-   * 接收后封装
-   */
+  // 接收后封装
   static bytesToString(buffer) {
     return String.fromCharCode.apply(null, new Uint8Array(buffer));
   }
-  /**
-   * buffer转16进制
-   */
+  // buffer转16进制
   static bytesToHex(buffer) {
     let str = this.bytesToString(buffer);
     let hexStr = '';
@@ -46,16 +38,11 @@ export default class BleUtil {
     }
     return hexStr;
   }
-  /**
-   * 字符串转16进制
-   * @param str
-   */
+  // 字符串转16进制
   static string2Hex(str) {
     return BleUtil.intToHex(parseInt(str));
   }
-  /**
-   * 字符串为空
-   */
+  // 字符串为空
   static isBlank(str) {
     if (typeof str == undefined || str == null) {
       return true;
@@ -63,9 +50,7 @@ export default class BleUtil {
       return str.length == 0;
     }
   }
-  /**
-   * 16进制转字符串
-   */
+  // 16进制转字符串
   static hexCharCodeToStr(hexCharCodeStr) {
   　　var trimedStr = hexCharCodeStr.trim();
   　　var rawStr =
@@ -87,18 +72,14 @@ export default class BleUtil {
   　　}
   　　return resultStr.join("");
   }
-  /**
-   * 16进制转buffer
-   */
+  // 16进制转buffer
   static hexToBUffer(hex) {
     const typedArray = new Uint8Array(hex.match(/[\da-f]{2}/gi).map(function (h) {
       return parseInt(h, 16)
     }));
     return typedArray;
   }
-  /**
-   * 16进制取反
-   */
+  // 16进制取反
   static hexReverse(hex) {
     let buffer = new Uint8Array(hex.match(/[\da-f]{2}/gi));
     let revList = '';
@@ -108,9 +89,7 @@ export default class BleUtil {
     });
     return revList;
   }
-  /*
-  16进制转二进制字符串
-  */
+  // 16进制转二进制字符串
   static hexToTwoString(hexString) {
     let inte = parseInt(hexString, 16);
     let bytesString = (inte).toString(2);

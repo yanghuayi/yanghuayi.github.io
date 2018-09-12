@@ -4,7 +4,7 @@
 
 下面我就记录一下`vue`tab页面缓存功能实现中遇到过的坑，希望对同志们有所帮助
 
-```
+```javascript (type)
 class App extends Vue {
   @Prop() private menuData!: menuItem[];
   // data
@@ -47,7 +47,7 @@
 ```
 
 上面的代码没什么坑的地方，拿到tab菜单数据渲染，然后监听删除和点击切换tab事件就行。
-```
+```javascript (type)
   @Watch('$route', { immediate: true, deep: true })
   routeChange(to: any, from: any) {
     this.$store.dispatch('AddTabPane', to.path);
@@ -55,7 +55,7 @@
 ```
 这段代码是监听路由变化的事件，拿到要跳转的路由地址去执行`vuex`里面的`AddTabPane`的方法
 `AddTabPane`方法如下：
-```
+```javascript (type)
   AddTabPane: (context: any, url: string) => new Promise((resolve, reject) => {
     const {
       menuData, // 菜单数据
@@ -99,7 +99,7 @@
 在这个项目里面我使用了`typescript`, 我设置了每个路由的`name`，但是`include`就是不能成功匹配到路由的`name`属性，经过多次的尝试，发现，在`typescript`里面生成的路由，`name`属性就是`class`类的类名。
 
 所以要有个一个数组报错需要缓存的路由的`class`类名值
-```
+```javascript (type)
   // 新增缓存页面
   addKeep: async (context: any, name: string) => {
     // 新增tab，增加缓存状态
